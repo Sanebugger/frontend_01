@@ -1,25 +1,23 @@
-
-import './App.css';
-import { BrowserRouter as Router, Route, Switch }  from "react-router-dom";
-import Home from './components/Home'
-import Navbar from './components/Navbar'
-import Login from './components/Login';
-
-
-
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import AboutUs from './components/AboutUs';
+import ContactUs from './components/ContactUs';
+import Header from "./components/Header";
+import Header2 from './components/Header2';
+import Home from './components/Home';
+import Products from './components/Products';
 
 function App() {
   return (
     <>
-    <Router>
-     
-      <Navbar/>      
+     <Router>
+      <Header/>
       <Switch>
-        <Route exact path="/"> <Home/></Route>
-        <Route exact path="/Login"> <Login/> </Route>
+        <Route exact path='/' component={Home}></Route>
+        <Route exaect path='/products' component={Products}></Route>
+        <Route exact path='/contactus' component={ContactUs}></Route>
+        <Route exact path='/aboutus' component={AboutUs}></Route>
       </Switch>
     </Router>
-
   </>
   );
 }
